@@ -1,0 +1,58 @@
+2026-11-12 10:46:10,687 classes ['asterisk_indenter', 'ball_array_indenter', 'hash_indenter', 'heart_indenter', 'hexagonal_indenter', 'ring_indenter', 'star_indenter', 'triangle_indenter'] | runs {'train': 696, 'val': 152, 'test': 152} | frames {'train': 243782, 'val': 53482, 'test': 52974}
+2026-11-12 10:46:11,168 params 1.21M
+2026-11-12 10:47:06,556 epoch 1 train_loss 0.5578 val_acc 0.9932 (54s)
+2026-11-12 10:47:58,283 epoch 2 train_loss 0.2881 val_acc 0.9954 (52s)
+2026-11-12 10:48:49,385 epoch 3 train_loss 0.2817 val_acc 0.9924 (51s)
+2026-11-12 10:49:40,842 epoch 4 train_loss 0.2781 val_acc 0.9942 (51s)
+2026-11-12 10:50:33,321 epoch 5 train_loss 0.2780 val_acc 0.9967 (52s)
+2026-11-12 10:51:24,656 epoch 6 train_loss 0.2751 val_acc 0.9953 (51s)
+2026-11-12 10:52:16,710 epoch 7 train_loss 0.2742 val_acc 0.9971 (52s)
+2026-11-12 10:53:07,862 epoch 8 train_loss 0.2730 val_acc 0.9967 (51s)
+2026-11-12 10:53:59,181 epoch 9 train_loss 0.2722 val_acc 0.9962 (51s)
+2026-11-12 10:54:50,936 epoch 10 train_loss 0.2719 val_acc 0.9962 (52s)
+2026-11-12 10:55:42,371 epoch 11 train_loss 0.2712 val_acc 0.9952 (51s)
+2026-11-12 10:56:33,399 epoch 12 train_loss 0.2710 val_acc 0.9958 (51s)
+2026-11-12 10:57:24,603 epoch 13 train_loss 0.2702 val_acc 0.9976 (51s)
+2026-11-12 10:58:16,122 epoch 14 train_loss 0.2698 val_acc 0.9977 (51s)
+2026-11-12 10:59:07,179 epoch 15 train_loss 0.2698 val_acc 0.9986 (51s)
+2026-11-12 10:59:58,414 epoch 16 train_loss 0.2692 val_acc 0.9977 (51s)
+2026-11-12 11:00:49,594 epoch 17 train_loss 0.2690 val_acc 0.9976 (51s)
+2026-11-12 11:01:41,276 epoch 18 train_loss 0.2688 val_acc 0.9978 (52s)
+2026-11-12 11:02:33,042 epoch 19 train_loss 0.2687 val_acc 0.9982 (52s)
+2026-11-12 11:03:25,204 epoch 20 train_loss 0.2689 val_acc 0.9986 (52s)
+Traceback (most recent call last):
+  File "<conda-env>/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3816, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 172, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 201, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7726, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7734, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'shape'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "experiments/shape_classify.py", line 158, in <module>
+    main()
+  File "experiments/shape_classify.py", line 146, in main
+    by_shape = te.groupby("shape").apply(lambda g: (g.pred == g["shape"]).mean())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<conda-env>/lib/python3.11/site-packages/pandas/core/groupby/groupby.py", line 1420, in apply
+    return self._python_apply_general(f, self._obj_with_exclusions)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<conda-env>/lib/python3.11/site-packages/pandas/core/groupby/groupby.py", line 1452, in _python_apply_general
+    values, mutated = self._grouper.apply_groupwise(f, data)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<conda-env>/lib/python3.11/site-packages/pandas/core/groupby/ops.py", line 1207, in apply_groupwise
+    res = f(group)
+          ^^^^^^^^
+  File "experiments/shape_classify.py", line 146, in <lambda>
+    by_shape = te.groupby("shape").apply(lambda g: (g.pred == g["shape"]).mean())
+                                                              ~^^^^^^^^^
+  File "<conda-env>/lib/python3.11/site-packages/pandas/core/frame.py", line 4330, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<conda-env>/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3823, in get_loc
+    raise KeyError(key) from err
+KeyError: 'shape'

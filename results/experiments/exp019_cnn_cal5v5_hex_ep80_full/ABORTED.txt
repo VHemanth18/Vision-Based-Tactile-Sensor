@@ -1,0 +1,1 @@
+ABORTED at start (12:55): best-val checkpoint selection on 5 noisy val runs picks mid-schedule epochs (see exp018); rerun with train.select=last.

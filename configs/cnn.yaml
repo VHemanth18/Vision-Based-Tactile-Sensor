@@ -1,0 +1,5 @@
+# Convolutional network
+base: default.yaml
+work_dir: outputs/cnn
+model: {arch: cnn}
+train: {lr: 0.001, epochs: 40, early_stop_patience: 8}

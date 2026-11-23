@@ -1,0 +1,18 @@
+# Configuration of record_both_sensors.py (DIGIT + ESP32/HX711/YZC-131 load cell).
+digit:
+  serial_id: D00000          # placeholder: serial number printed on the DIGIT (python -c "from digit_interface import DigitHandler; print(DigitHandler.list_digits())")
+  resolution: QVGA           # QVGA = 320 x 240, VGA = 640 x 480
+  fps: 30                    # QVGA: 30 or 60
+  save_every_n_frames: 1     # 1 = save every frame
+  led_intensity: 15          # 0-15
+
+loadcell:
+  port: auto                 # auto-detect the ESP32, or e.g. COM5 / /dev/ttyUSB0
+  baud_rate: 115200          # must match Serial.begin(...) in the ESP32 sketch
+  calibration: true          # tare + known mass at start-up (prompts on stdin)
+  known_weight_g: 100        # (example) mass used for the one-point calibration
+
+recording:
+  output_dir: recordings     # sessions are written to <output_dir>/recording_YYYYmmdd_HHMMSS/
+  image_format: png
+  interpolation: linear      # load assigned to each frame: linear | cubic | nearest | last

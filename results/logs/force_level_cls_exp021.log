@@ -1,0 +1,30 @@
+== outputs/experiments/exp021_cnn_cal5v5_hex_ref30_last
+{
+ "frame_single_frame": {
+  "acc": 0.8700722469532219,
+  "within_one": 1.0,
+  "acc_in_contact": 0.7795667960435708
+ },
+ "frame_causal_mean_w3": {
+  "acc": 0.8678245639640955,
+  "within_one": 0.9999708093118296,
+  "acc_in_contact": 0.7778139476649556
+ },
+ "frame_centered_median_w25": {
+  "acc": 0.8703495584908414,
+  "within_one": 1.0,
+  "acc_in_contact": 0.7799424064104169
+ },
+ "run_level": {
+  "acc": 1.0,
+  "n_runs": 115,
+  "peak_mae_N": 0.05472969386888587
+ }
+}
+pred  1.0  2.0  3.0  4.0  5.0
+true                         
+1.0    23    0    0    0    0
+2.0     0   23    0    0    0
+3.0     0    0   23    0    0
+4.0     0    0    0   23    0
+5.0     0    0    0    0   23

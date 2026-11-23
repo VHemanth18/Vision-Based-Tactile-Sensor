@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Generated data and new runs (the dataset itself is not in the repository, ~31 GB)
+outputs/
+synthetic_dataset/
+TACTO_DATASETS/
+data_generation/outputs/
+real_rig/recordings/
+
+# Checkpoints: only the two released models in checkpoints/ are tracked
+*.pt
+!checkpoints/*.pt

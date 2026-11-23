@@ -1,0 +1,9 @@
+shape,asterisk_indenter,ball_array_indenter,hash_indenter,heart_indenter,hexagonal_indenter,ring_indenter,star_indenter,triangle_indenter
+asterisk_indenter,5749,0,0,0,0,0,0,0
+ball_array_indenter,0,6151,0,0,0,0,0,0
+hash_indenter,0,0,7413,0,0,0,0,0
+heart_indenter,0,0,0,6731,0,0,0,0
+hexagonal_indenter,0,0,0,0,6250,0,0,63
+ring_indenter,0,0,0,0,0,6617,0,0
+star_indenter,0,0,0,0,0,0,6545,0
+triangle_indenter,0,0,0,0,99,0,1,7355

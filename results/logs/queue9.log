@@ -1,0 +1,4 @@
+=== START cnn_cal5v5_hex_ref30_last 14:02:26
+=== END cnn_cal5v5_hex_ref30_last exit=0 14:45:00
+RESULT {"exp": "exp021_cnn_cal5v5_hex_ref30_last", "model": "cnn", "val": "none", "test": "hexagonal_indenter", "overrides": "split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[hexagonal_indenter] train.early_stop_patience=999 train.select=last preprocess.ref_frames=30", "note": "= exp007 + reference averaged over first 30 frames, final model kept", "epochs_run": 40, "best_epoch": 40, "val_contact_mae": 0.0787, "val_all_mae": 0.0466, "test_contact_mae": 0.078, "test_contact_rmse": 0.1088, "test_contact_bias": -0.0189, "test_contact_r2": 0.9946, "test_all_mae": 0.046, "test_all_r2": 0.9971, "minutes": 42.5}
+QUEUE9_DONE

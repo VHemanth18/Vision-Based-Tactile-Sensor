@@ -1,0 +1,1 @@
+experiments/run_exp.py --name cnn_diffonly --model cnn --note raw channels removed --set preprocess.input_mode=diff

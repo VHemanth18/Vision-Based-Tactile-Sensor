@@ -1,0 +1,5 @@
+=== START cnn_cal5v5_os10_hex_ep80 09:49:55
+=== END cnn_cal5v5_os10_hex_ep80 exit=0 10:28:10
+RESULT {"exp": "exp014_cnn_cal5v5_os10_hex_ep80", "model": "cnn", "val": "none", "test": "hexagonal_indenter", "overrides": "split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[hexagonal_indenter] train.epochs=80 train.early_stop_patience=15", "note": "= exp007, 80 epochs", "epochs_run": 39, "best_epoch": 24, "val_contact_mae": 0.1112, "val_all_mae": 0.0671, "test_contact_mae": 0.1271, "test_contact_rmse": 0.1819, "test_contact_bias": -0.0618, "test_contact_r2": 0.9848, "test_all_mae": 0.0756, "test_all_r2": 0.9918, "minutes": 38.2}
+=== START cnn_cal5v5_os10_hex_ep80_init1 10:28:10
+QUEUE5_STOPPED_MANUALLY 10:28:44

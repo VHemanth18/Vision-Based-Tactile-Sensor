@@ -1,0 +1,1 @@
+experiments/run_exp.py --name cnn_cal5v5_os10_heart --model cnn --val none --test heart_indenter --note recipe check on another shape: test=heart --set split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[heart_indenter]

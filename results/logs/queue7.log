@@ -1,0 +1,11 @@
+=== START cnn_cal5v5_hex_init1 10:28:44
+=== END cnn_cal5v5_hex_init1 exit=0 11:08:04
+RESULT {"exp": "exp016_cnn_cal5v5_hex_init1", "model": "cnn", "val": "none", "test": "hexagonal_indenter", "overrides": "split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[hexagonal_indenter] train.early_stop_patience=999 train.seed=1", "note": "= exp007, train.seed=1 (same split), full schedule", "epochs_run": 40, "best_epoch": 36, "val_contact_mae": 0.1088, "val_all_mae": 0.0642, "test_contact_mae": 0.1053, "test_contact_rmse": 0.1484, "test_contact_bias": -0.0189, "test_contact_r2": 0.9899, "test_all_mae": 0.0619, "test_all_r2": 0.9946, "minutes": 39.3}
+=== START cnn_cal5v5_hex_init2 11:08:04
+=== END cnn_cal5v5_hex_init2 exit=0 11:47:46
+RESULT {"exp": "exp017_cnn_cal5v5_hex_init2", "model": "cnn", "val": "none", "test": "hexagonal_indenter", "overrides": "split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[hexagonal_indenter] train.early_stop_patience=999 train.seed=2", "note": "= exp007, train.seed=2 (same split), full schedule", "epochs_run": 40, "best_epoch": 32, "val_contact_mae": 0.0906, "val_all_mae": 0.0537, "test_contact_mae": 0.0954, "test_contact_rmse": 0.1342, "test_contact_bias": -0.0129, "test_contact_r2": 0.9917, "test_all_mae": 0.0562, "test_all_r2": 0.9956, "minutes": 39.6}
+=== START cnn_cal5v5_hex_tmp36 11:47:46
+=== END cnn_cal5v5_hex_tmp36 exit=0 12:54:11
+RESULT {"exp": "exp018_cnn_cal5v5_hex_tmp36", "model": "cnn", "val": "none", "test": "hexagonal_indenter", "overrides": "split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[hexagonal_indenter] train.early_stop_patience=999 preprocess.temporal_offsets=[3,6]", "note": "= exp007 + past frames t-3,t-6 (causal), full schedule", "epochs_run": 40, "best_epoch": 20, "val_contact_mae": 0.1287, "val_all_mae": 0.0756, "test_contact_mae": 0.1283, "test_contact_rmse": 0.1801, "test_contact_bias": -0.0217, "test_contact_r2": 0.9851, "test_all_mae": 0.075, "test_all_r2": 0.992, "minutes": 66.4}
+=== START cnn_cal5v5_hex_ep80_full 12:54:11
+QUEUE7_STOPPED_MANUALLY 12:54:40

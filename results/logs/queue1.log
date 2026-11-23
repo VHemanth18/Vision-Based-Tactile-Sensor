@@ -1,0 +1,16 @@
+=== START cnn_diffonly 16:42:52
+=== END cnn_diffonly exit=0 16:51:17
+RESULT {"exp": "exp001_cnn_diffonly", "model": "cnn", "val": "hash_indenter", "test": "hexagonal_indenter", "overrides": "preprocess.input_mode=diff", "note": "raw channels removed", "epochs_run": 10, "best_epoch": 2, "val_contact_mae": 0.3015, "val_all_mae": 0.1763, "test_contact_mae": 3.2822, "test_contact_rmse": 3.4333, "test_contact_bias": 3.2799, "test_contact_r2": -4.408, "test_all_mae": 1.9127, "test_all_r2": -1.8982, "minutes": 8.4}
+=== START cnn_diff_gainjit 16:51:17
+=== END cnn_diff_gainjit exit=0 16:59:41
+RESULT {"exp": "exp002_cnn_diff_gainjit", "model": "cnn", "val": "hash_indenter", "test": "hexagonal_indenter", "overrides": "preprocess.input_mode=diff preprocess.diff_gain_jitter=[0.6,1.6]", "note": "diff + random diff contrast 0.6-1.6", "epochs_run": 10, "best_epoch": 2, "val_contact_mae": 0.3722, "val_all_mae": 0.223, "test_contact_mae": 3.1332, "test_contact_rmse": 3.2646, "test_contact_bias": 3.1332, "test_contact_r2": -3.8896, "test_all_mae": 1.8318, "test_all_r2": -1.629, "minutes": 8.4}
+=== START cnn_diff_gainjit_avgmax 16:59:41
+=== END cnn_diff_gainjit_avgmax exit=0 17:15:18
+RESULT {"exp": "exp003_cnn_diff_gainjit_avgmax", "model": "cnn", "val": "hash_indenter", "test": "hexagonal_indenter", "overrides": "preprocess.input_mode=diff preprocess.diff_gain_jitter=[0.6,1.6] model.cnn.pool=avgmax", "note": "diff + gain jitter + avg+max pooling", "epochs_run": 19, "best_epoch": 11, "val_contact_mae": 0.472, "val_all_mae": 0.2811, "test_contact_mae": 3.8042, "test_contact_rmse": 4.0061, "test_contact_bias": 3.8041, "test_contact_r2": -6.3629, "test_all_mae": 2.2231, "test_all_r2": -2.946, "minutes": 15.6}
+=== START cnn_runsplit_seen 17:15:18
+=== END cnn_runsplit_seen exit=0 17:47:42
+RESULT {"exp": "exp004_cnn_runsplit_seen", "model": "cnn", "val": "hash_indenter", "test": "hexagonal_indenter", "overrides": "split.mode=run", "note": "UPPER BOUND: seen shapes, unseen runs (split.mode=run, all 8 shapes)", "epochs_run": 40, "best_epoch": 37, "val_contact_mae": 0.0791, "val_all_mae": 0.0466, "test_contact_mae": 0.0831, "test_contact_rmse": 0.1207, "test_contact_bias": -0.0053, "test_contact_r2": 0.9925, "test_all_mae": 0.0485, "test_all_r2": 0.9961, "minutes": 32.4}
+=== START cnn_calib5_hex 17:47:42
+=== END cnn_calib5_hex exit=0 18:00:56
+RESULT {"exp": "exp005_cnn_calib5_hex", "model": "cnn", "val": "hash_indenter", "test": "hexagonal_indenter", "overrides": "split.calib_runs_per_force=1", "note": "few-shot: 5 hexagonal runs (1 per force) in train; test = other 120 hex runs", "epochs_run": 15, "best_epoch": 7, "val_contact_mae": 0.4194, "val_all_mae": 0.2565, "test_contact_mae": 0.8819, "test_contact_rmse": 1.1909, "test_contact_bias": -0.8541, "test_contact_r2": 0.3478, "test_all_mae": 0.5266, "test_all_r2": 0.6506, "minutes": 13.2}
+QUEUE1_DONE

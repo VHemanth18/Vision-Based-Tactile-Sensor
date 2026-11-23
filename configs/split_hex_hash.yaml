@@ -1,0 +1,16 @@
+# Fixed shape split, also used by run_split_experiment.py:
+#   train: ball_array, heart, ring, star, triangle, asterisk | val: hash | test: hexagonal
+# Combine with a model config:
+#   python main.py index --config configs/cnn.yaml --config configs/split_hex_hash.yaml
+#   python main.py train --config configs/cnn.yaml --config configs/split_hex_hash.yaml
+#   python main.py train --config configs/vit.yaml --config configs/split_hex_hash.yaml
+index_dir: outputs/split_test-hexagonal_val-hash/index
+work_dir: outputs/split_test-hexagonal_val-hash/{arch}
+data:
+  include_shapes: [ball_array_indenter, heart_indenter, ring_indenter, star_indenter,
+                   triangle_indenter, asterisk_indenter, hash_indenter, hexagonal_indenter]
+  exclude_shapes: []
+split:
+  mode: shape
+  test_shapes: [hexagonal_indenter]
+  val_shapes: [hash_indenter]

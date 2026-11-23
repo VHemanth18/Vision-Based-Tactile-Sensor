@@ -1,0 +1,77 @@
+# Tactile force estimation: frame -> contact force (N)
+# All paths may be absolute or relative to the directory you run main.py from.
+
+index_dir: outputs/index             # index.csv, coverage, split.json: shared by every model
+work_dir: outputs/{arch}             # this model's checkpoint, metrics and plots ({arch} = cnn | vit)
+
+data:
+  root: C:/VIJAY_HEMANTH/DS          # folder that contains ball_array_indenter/, hash_indenter/, ...
+  frames_dirname: frames
+  image_exts: [.png, .jpg, .jpeg]
+  frame_stride: 1                    # index every Nth frame (raise to 2-3 to shrink the index)
+  fps: auto                          # auto = last_frame_index / duration; or a number, e.g. 30
+  # Label CSV per run (searched in the run folder, then in its frames/ folder).
+  label_csv_patterns: ["force_depth_calibration*.csv", "*force*.csv", "*.csv"]
+  force_column: auto                 # auto | exact column name
+  assume_uniform_rows: true          # CSV without a time column: rows evenly spaced over the run
+  # If a run has no label CSV, use the commanded target profile as the label (weaker label).
+  allow_target_fallback: true
+  pre_rest: 0.2                      # must match the data-collection script (fraction of duration)
+  post_rest: 0.2
+  profiles: [square, trapezoidal, triangular, sinusoidal, sigmoid]
+  include_shapes: []                 # empty = all shapes; otherwise only these folder names
+  # Shapes to skip. Dataset v2: every shape passed `checklabels`, so nothing is excluded.
+  # (v1 excluded cross, flower, gear, hash, moon, nonagon, triangle, triple_cylinder.)
+  exclude_shapes: []
+
+preprocess:
+  # Your frames are one tactile image (no text, no depth panel): use the whole frame.
+  # For frames saved as [tactile RGB | depth colormap] with a "ref=..N F=..N" overlay
+  # (demo_pybullet_digit_force.py), use mask_top_px: 22 and crop: [0.0, 0.5, 0.0, 1.0].
+  mask_top_px: 0                     # rows blacked out at the top of the FULL frame (0 = none)
+  crop: [0.0, 1.0, 0.0, 1.0]         # x0, x1, y0, y1 as fractions of the full frame
+  size: [160, 120]                   # network input H, W
+  input_mode: raw+diff               # raw | diff | raw+diff (diff = frame - first frame of run)
+  diff_gain: 4.0
+
+split:
+  mode: run                          # run (unseen runs) | shape (unseen indenters) | random (leaky; debug only)
+  val_frac: 0.15
+  test_frac: 0.15
+  test_shapes: [hexagonal_indenter]  # used when mode = shape (pick a shape with all 5 force levels)
+  seed: 42
+
+model:
+  arch: cnn                          # cnn | vit
+  cnn:                               # used when arch = cnn
+    channels: [32, 64, 128, 256]     # one conv block per entry; each block halves H and W
+    dropout: 0.3
+  vit:                               # used when arch = vit
+    patch_size: 8                    # preprocess.size must be divisible by this
+    dim: 192
+    depth: 6
+    heads: 6
+    mlp_ratio: 4.0
+    dropout: 0.1
+
+train:
+  device: auto                       # auto | cuda | cpu
+  epochs: 25
+  batch_size: 64
+  lr: 0.0003
+  weight_decay: 0.0001
+  num_workers: 4                     # set 0 if Windows multiprocessing gives trouble
+  max_frames_per_run: 150            # per-epoch random subsample per run (balances 10s vs 30s runs)
+  augment: true
+  amp: true                          # mixed precision on CUDA
+  early_stop_patience: 6
+  force_scale: 5.0                   # targets are divided by this inside the loss
+  loss: huber                        # huber | mse
+  huber_delta: 0.05                  # in scaled units (0.05 * 5 N = 0.25 N)
+  log_every: 50
+
+evaluate:
+  frame_stride: 1                    # evaluate every Nth test frame
+  contact_threshold: 0.05            # N; frames above this count as "in contact"
+  n_run_plots: 12
+  batch_size: 128

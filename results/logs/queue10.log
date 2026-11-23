@@ -1,0 +1,4 @@
+=== START cnn_cal5v5_heart_ref30_last 14:46:17
+=== END cnn_cal5v5_heart_ref30_last exit=0 15:28:42
+RESULT {"exp": "exp022_cnn_cal5v5_heart_ref30_last", "model": "cnn", "val": "none", "test": "heart_indenter", "overrides": "split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[heart_indenter] train.early_stop_patience=999 train.select=last preprocess.ref_frames=30", "note": "= exp021 recipe on heart (cf. exp010)", "epochs_run": 40, "best_epoch": 39, "val_contact_mae": 0.0774, "val_all_mae": 0.0455, "test_contact_mae": 0.0742, "test_contact_rmse": 0.1068, "test_contact_bias": -0.0167, "test_contact_r2": 0.9948, "test_all_mae": 0.0433, "test_all_r2": 0.9972, "minutes": 42.4}
+QUEUE10_DONE

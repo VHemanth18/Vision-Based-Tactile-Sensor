@@ -1,0 +1,4 @@
+=== START vit_cal5v5_hex_ref30_last 13:40:48
+=== END vit_cal5v5_hex_ref30_last exit=0 16:03:25
+RESULT {"exp": "exp023_vit_cal5v5_hex_ref30_last", "model": "vit", "val": "none", "test": "hexagonal_indenter", "overrides": "split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[hexagonal_indenter] train.early_stop_patience=999 train.select=last preprocess.ref_frames=30", "note": "= exp021 recipe with the ViT (cf. exp011)", "epochs_run": 60, "best_epoch": 9, "val_contact_mae": 0.7839, "val_all_mae": 0.4601, "test_contact_mae": 0.8054, "test_contact_rmse": 0.9621, "test_contact_bias": 0.8033, "test_contact_r2": 0.5744, "test_all_mae": 0.4696, "test_all_r2": 0.772, "minutes": 142.5}
+QUEUE11_DONE

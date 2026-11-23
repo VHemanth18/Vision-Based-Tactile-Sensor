@@ -1,0 +1,1 @@
+experiments/run_exp.py --name cnn_cal5v5_heart_ref30_last --model cnn --val none --test heart_indenter --note = exp021 recipe on heart (cf. exp010) --set split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[heart_indenter] train.early_stop_patience=999 train.select=last preprocess.ref_frames=30

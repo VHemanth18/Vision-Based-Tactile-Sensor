@@ -1,0 +1,9 @@
+# Phase 1 - dataset generation in simulation (data_generation/)
+# TACTO: https://github.com/facebookresearch/tacto  (install from source: pip install git+https://github.com/facebookresearch/tacto.git)
+pybullet>=3.2
+pybulletX
+hydra-core>=1.1
+omegaconf>=2.1
+opencv-python>=4.8
+numpy>=1.24
+matplotlib>=3.7

@@ -1,0 +1,1 @@
+experiments/run_exp.py --name vit_runsplit_seen --model vit --note UPPER BOUND ViT: seen shapes, unseen runs --set split.mode=run

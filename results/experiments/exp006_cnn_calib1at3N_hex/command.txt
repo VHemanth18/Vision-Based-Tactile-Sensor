@@ -1,0 +1,1 @@
+experiments/run_exp.py --name cnn_calib1at3N_hex --model cnn --note few-shot: ONE hexagonal run at 3 N in train; test = other 124 hex runs --set split.calib_runs_per_force=1 split.calib_forces=[3]

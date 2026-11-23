@@ -1,0 +1,1 @@
+experiments/run_exp.py --name cnn_runsplit_seen --model cnn --note UPPER BOUND: seen shapes, unseen runs (split.mode=run, all 8 shapes) --set split.mode=run

@@ -1,0 +1,1 @@
+experiments/run_exp.py --name cnn_diff_gainjit --model cnn --note diff + random diff contrast 0.6-1.6 --set preprocess.input_mode=diff preprocess.diff_gain_jitter=[0.6,1.6]

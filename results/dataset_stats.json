@@ -1,0 +1,11 @@
+{
+ "n_frames": 601000,
+ "contact_frac": 0.5827587354409318,
+ "contact_frac_by_profile": {
+  "square": 0.5957404326123128,
+  "trapezoidal": 0.5920465890183029,
+  "triangular": 0.5849251247920133,
+  "sinusoidal": 0.5901497504159734,
+  "sigmoid": 0.5509317803660566
+ }
+}

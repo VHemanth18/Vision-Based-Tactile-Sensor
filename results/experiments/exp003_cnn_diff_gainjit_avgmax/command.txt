@@ -1,0 +1,1 @@
+experiments/run_exp.py --name cnn_diff_gainjit_avgmax --model cnn --note diff + gain jitter + avg+max pooling --set preprocess.input_mode=diff preprocess.diff_gain_jitter=[0.6,1.6] model.cnn.pool=avgmax

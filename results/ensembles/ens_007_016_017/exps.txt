@@ -1,0 +1,3 @@
+outputs/experiments/exp007_cnn_cal5v5_os10_hex
+outputs/experiments/exp016_cnn_cal5v5_hex_init1
+outputs/experiments/exp017_cnn_cal5v5_hex_init2

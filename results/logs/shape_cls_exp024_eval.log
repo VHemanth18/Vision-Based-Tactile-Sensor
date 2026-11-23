@@ -1,0 +1,39 @@
+{
+ "frame_acc": 0.9969230188394307,
+ "macro_f1": 0.9970212459469665,
+ "run_acc_majority": 1.0,
+ "n_test_frames": 52974,
+ "n_test_runs": 152,
+ "mean_conf_correct": 0.9547483921051025,
+ "mean_conf_wrong": 0.5130823850631714
+}
+                  n       acc
+fbin                         
+(0.05, 0.25]   3698  0.955922
+(0.25, 0.5]    3754  1.000000
+(0.5, 1.0]    10054  1.000000
+(1.0, 2.0]    11548  1.000000
+(2.0, 3.0]     9558  1.000000
+(3.0, 5.5]    14362  1.000000
+shape
+asterisk_indenter      1.000000
+ball_array_indenter    1.000000
+hash_indenter          1.000000
+heart_indenter         1.000000
+hexagonal_indenter     0.990021
+ring_indenter          1.000000
+star_indenter          1.000000
+triangle_indenter      0.986586
+Name: ok, dtype: float64
+pred                 asterisk_indenter  ...  triangle_indenter
+shape                                   ...                   
+asterisk_indenter                 5749  ...                  0
+ball_array_indenter                  0  ...                  0
+hash_indenter                        0  ...                  0
+heart_indenter                       0  ...                  0
+hexagonal_indenter                   0  ...                 63
+ring_indenter                        0  ...                  0
+star_indenter                        0  ...                  0
+triangle_indenter                    0  ...               7355
+
+[8 rows x 8 columns]

@@ -1,0 +1,9 @@
+{
+ "frame_acc": 0.9969230188394307,
+ "macro_f1": 0.9970212459469665,
+ "run_acc_majority": 1.0,
+ "n_test_frames": 52974,
+ "n_test_runs": 152,
+ "mean_conf_correct": 0.9547483921051025,
+ "mean_conf_wrong": 0.5130823850631714
+}

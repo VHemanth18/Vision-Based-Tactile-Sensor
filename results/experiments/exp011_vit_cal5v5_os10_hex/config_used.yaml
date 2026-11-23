@@ -1,0 +1,97 @@
+index_dir: outputs/experiments/_index
+work_dir: outputs/experiments/exp011_vit_cal5v5_os10_hex
+data:
+  root: /path/to/TACTO_DATASETS
+  frames_dirname: frames
+  image_exts:
+  - .png
+  - .jpg
+  - .jpeg
+  frame_stride: 1
+  fps: auto
+  label_csv_patterns:
+  - force_depth_calibration*.csv
+  - '*force*.csv'
+  - '*.csv'
+  force_column: auto
+  assume_uniform_rows: true
+  allow_target_fallback: true
+  pre_rest: 0.2
+  post_rest: 0.2
+  profiles:
+  - square
+  - trapezoidal
+  - triangular
+  - sinusoidal
+  - sigmoid
+  include_shapes:
+  - asterisk_indenter
+  - ball_array_indenter
+  - hash_indenter
+  - heart_indenter
+  - hexagonal_indenter
+  - ring_indenter
+  - star_indenter
+  - triangle_indenter
+  exclude_shapes: []
+preprocess:
+  mask_top_px: 0
+  crop:
+  - 0.0
+  - 1.0
+  - 0.0
+  - 1.0
+  size:
+  - 160
+  - 120
+  input_mode: raw+diff
+  diff_gain: 4.0
+split:
+  mode: shape
+  val_frac: 0.15
+  test_frac: 0.15
+  test_shapes:
+  - hexagonal_indenter
+  seed: 42
+  val_shapes: []
+  calib_runs_per_force: 1
+  calib_val_runs_per_force: 1
+model:
+  arch: vit
+  cnn:
+    channels:
+    - 32
+    - 64
+    - 128
+    - 256
+    dropout: 0.3
+  vit:
+    patch_size: 8
+    dim: 192
+    depth: 6
+    heads: 6
+    mlp_ratio: 4.0
+    dropout: 0.1
+train:
+  device: auto
+  epochs: 60
+  batch_size: 64
+  lr: 0.0005
+  weight_decay: 0.05
+  num_workers: 8
+  max_frames_per_run: 150
+  augment: true
+  amp: true
+  early_stop_patience: 12
+  force_scale: 5.0
+  loss: huber
+  huber_delta: 0.05
+  log_every: 50
+  oversample_factor: 10
+  oversample_shapes:
+  - hexagonal_indenter
+evaluate:
+  frame_stride: 1
+  contact_threshold: 0.05
+  n_run_plots: 12
+  batch_size: 128

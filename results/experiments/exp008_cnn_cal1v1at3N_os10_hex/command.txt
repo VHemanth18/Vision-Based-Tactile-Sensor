@@ -1,0 +1,1 @@
+experiments/run_exp.py --name cnn_cal1v1at3N_os10_hex --model cnn --val none --note ONE hex calib run at 3 N (x10) + 1 hex val run at 3 N; test 123 hex runs --set split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 split.calib_forces=[3] train.oversample_shapes=[hexagonal_indenter]

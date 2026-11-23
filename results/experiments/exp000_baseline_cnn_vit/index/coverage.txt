@@ -1,0 +1,19 @@
+Frames indexed: 601,000   runs with frames: 1000
+
+Runs per shape by status:
+status                ok
+shape                   
+asterisk_indenter    125
+ball_array_indenter  125
+hash_indenter        125
+heart_indenter       125
+hexagonal_indenter   125
+ring_indenter        125
+star_indenter        125
+triangle_indenter    125
+
+Label source (runs):
+label_source
+csv_frame    1000
+
+Force label range: 0.000 .. 5.002 N

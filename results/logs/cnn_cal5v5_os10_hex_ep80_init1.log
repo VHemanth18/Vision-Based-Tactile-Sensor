@@ -1,0 +1,31 @@
+
+######## exp015_cnn_cal5v5_os10_hex_ep80_init1 ########  model=cnn  overrides=['split.calib_runs_per_force=1', 'split.calib_val_runs_per_force=1', 'train.oversample_factor=10', 'train.oversample_shapes=[hexagonal_indenter]', 'train.epochs=80', 'train.early_stop_patience=15', 'train.seed=1']  = exp014, train.seed=1 (same split)
+10:28:11 INFO train: 528580 frames,  880 runs, shapes=asterisk_indenter,ball_array_indenter,hash_indenter,heart_indenter,hexagonal_indenter,ring_indenter,star_indenter,triangle_indenter
+10:28:11 INFO val  :   3905 frames,    5 runs, shapes=hexagonal_indenter
+10:28:11 INFO test :  68515 frames,  115 runs, shapes=hexagonal_indenter
+10:28:11 INFO Model cnn, 1.21M params, device cuda
+10:28:14 INFO   epoch 1 step 50/2167 loss 0.00855
+10:28:15 INFO   epoch 1 step 100/2167 loss 0.00712
+10:28:17 INFO   epoch 1 step 150/2167 loss 0.00645
+10:28:18 INFO   epoch 1 step 200/2167 loss 0.00604
+10:28:19 INFO   epoch 1 step 250/2167 loss 0.00574
+Traceback (most recent call last):
+  File "experiments/run_exp.py", line 113, in <module>
+    main()
+  File "experiments/run_exp.py", line 77, in main
+    pipeline.cmd_train(cfg)  # train + evaluate on test -> eval_test/
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "tactile_force/pipeline.py", line 273, in cmd_train
+    train_model(parts, cfg, _work(cfg))
+  File "tactile_force/train.py", line 86, in train_model
+    scaler.step(opt)
+  File "<conda-env>/lib/python3.11/site-packages/torch/amp/grad_scaler.py", line 478, in step
+    retval = self._maybe_opt_step(optimizer, optimizer_state, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<conda-env>/lib/python3.11/site-packages/torch/amp/grad_scaler.py", line 371, in _maybe_opt_step
+    if not sum(v.item() for v in optimizer_state["found_inf_per_device"].values()):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<conda-env>/lib/python3.11/site-packages/torch/amp/grad_scaler.py", line 371, in <genexpr>
+    if not sum(v.item() for v in optimizer_state["found_inf_per_device"].values()):
+               ^^^^^^^^
+KeyboardInterrupt

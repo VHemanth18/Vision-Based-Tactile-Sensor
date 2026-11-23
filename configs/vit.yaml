@@ -1,0 +1,7 @@
+# Vision Transformer (no pretraining): needs more epochs, warm-up and stronger weight decay than the CNN.
+base: default.yaml
+work_dir: outputs/vit
+model:
+  arch: vit
+  vit: {patch_size: 8, dim: 192, depth: 6, heads: 6, mlp_ratio: 4.0, dropout: 0.1}
+train: {lr: 0.0005, weight_decay: 0.05, epochs: 60, early_stop_patience: 12, batch_size: 64}

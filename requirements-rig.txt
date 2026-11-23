@@ -1,0 +1,6 @@
+# Phase 2 - real-world recording with the DIGIT sensor and the ESP32/HX711 load cell (real_rig/)
+digit-interface
+pyserial>=3.5
+opencv-python>=4.8
+pyyaml>=6.0
+numpy>=1.24

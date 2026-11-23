@@ -1,0 +1,1 @@
+ABORTED at epoch 1 (10:28): queue 5 stopped because early stopping (patience 15) cut the 80-epoch OneCycle schedule before LR annealing (see exp014). Superseded by queue 7.

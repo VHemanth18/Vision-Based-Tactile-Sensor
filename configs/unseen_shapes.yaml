@@ -1,0 +1,15 @@
+# Generalisation to unseen indenter shapes. Combine with a model config:
+#   python main.py train --config configs/cnn.yaml --config configs/unseen_shapes.yaml
+#   python main.py train --config configs/vit.yaml --config configs/unseen_shapes.yaml
+#
+# Shape names must match the folder names in data.root (index prints them).
+# With 9 shapes: 2 test + 1 validation + 6 train  (validation is a whole shape too, so early
+# stopping picks the checkpoint that generalises to new shapes rather than the best on seen ones).
+# Choose held-out shapes that have all 5 force levels; mix "similar to a training shape" and
+# "unlike any training shape" so the result is not decided by one lucky choice.
+work_dir: outputs/unseen_shapes/{arch}
+split:
+  mode: shape
+  # Dataset v2 (9 shapes). Suggested: one shape similar to training (hexagonal), one unlike (asterisk / hash).
+  test_shapes: [hexagonal_indenter, asterisk_indenter]   # EDIT
+  val_shapes: [heart_indenter]                           # EDIT

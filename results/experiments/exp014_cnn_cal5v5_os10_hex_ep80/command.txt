@@ -1,0 +1,1 @@
+experiments/run_exp.py --name cnn_cal5v5_os10_hex_ep80 --model cnn --val none --note = exp007, 80 epochs --set split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[hexagonal_indenter] train.epochs=80 train.early_stop_patience=15

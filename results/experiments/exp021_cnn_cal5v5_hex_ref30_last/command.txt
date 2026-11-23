@@ -1,0 +1,1 @@
+experiments/run_exp.py --name cnn_cal5v5_hex_ref30_last --model cnn --val none --note = exp007 + reference averaged over first 30 frames, final model kept --set split.calib_runs_per_force=1 split.calib_val_runs_per_force=1 train.oversample_factor=10 train.oversample_shapes=[hexagonal_indenter] train.early_stop_patience=999 train.select=last preprocess.ref_frames=30
